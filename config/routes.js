@@ -34,7 +34,22 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+
+  'get /login': {
+    view: 'login'
+  },
+
+  'post /login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
+
+  'get /signup': {
+    view: 'signup'
   }
+
+  // Custom CRUD Rest routes
+  // 'post /cards/magic/add': 'MagicCardsController.create',
+  // 'get /cards/magic/find/:id?': 'MagicCardsController.find'
 
   /***************************************************************************
   *                                                                          *
