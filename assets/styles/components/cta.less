@@ -1,0 +1,165 @@
+#cta {
+  background: url('/images/background.jpg') no-repeat;
+  background-size: 100%;
+  text-align: center;
+  padding: 10em 0;
+}
+
+#cta h1 {
+  font-family: @font;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 1.8em;
+}
+
+#searchBox {
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#searchBox input {
+  width: calc(100%);
+  box-sizing: border-box;
+  background: @white url('../images/icons/search.svg') no-repeat;
+  background-size: 1.8em;
+  background-position: right 1.2em top 1em;
+  border: none;
+  padding: 1.2em;
+  outline: none;
+}
+
+#searchBox #autocomplete {
+  position: absolute;
+  min-width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+}
+
+#searchBox #autocomplete .result {
+  box-sizing: border-box;
+  background: #F9F9F9;
+  padding: 1em;
+  font-size: 0.7em;
+  border-top: 1px solid #e1e1e1;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+#searchBox #autocomplete .result:hover {
+  background: #F3F3F3;
+}
+
+#searchBox #autocomplete .result .cardType {
+  margin-right: 10px;
+  margin-left: 4px;
+  color: @light-gray;
+  font-weight: 400;
+}
+
+#searchBox #autocomplete .result .cardSet {
+  font-size: 0.6em;
+  color: @light-gray;
+}
+
+// #cta input {
+//   width: 45%;
+//   margin: 0 auto;
+//   border: none;
+//   padding: 1.2em;
+//   background: @white url('../images/icons/search.svg') no-repeat;
+//   background-size: 1.8em;
+//   background-position: right 1.2em top 1em;
+//   outline: none;
+// }
+//
+// #searchBox {
+//   position: relative;
+// }
+//
+// #autocomplete {
+//   background: @white;
+//   position: absolute;
+//   width: 45%;
+//   left: 27.5%;
+//   margin: 1px auto 0;
+// }
+//
+// #autocomplete .result {
+//   padding: 1em;
+//   border-top: 1px solid @light-gray;
+//   font-size: 0.7em;
+// }
+
+// #cta {
+//   background: url('/images/background.jpg') no-repeat;
+//   background-size: 100%;
+//   text-align: center;
+//   padding: 10em;
+// }
+//
+// #cta .search h1 {
+//   font-family: @font;
+//   font-weight: 400;
+//   margin-top: 0;
+// }
+//
+// .searchButton {
+//   border: none;
+//   background: transparent url('/images/icons/search.svg') no-repeat left;
+//   position: absolute;
+//   right: 10%;
+//   bottom: 1em;
+//   z-index: 1;
+// }
+//
+// form.search {
+//   margin: 0px 20%;
+//   position: relative;
+//   width: auto;
+// }
+//
+// form.search input {
+//   width: 100%;
+//   padding: 1.2em;
+//   border: none;
+//   margin-top: 2em;
+//   position: relative;
+//   background: @white url('../images/icons/search.svg') no-repeat;
+//   background-size: 1.8em;
+//   background-position: right 1.2em top 1em;
+// }
+//
+// #autocomplete {
+//   margin: 1px 8%;
+//   position: absolute;
+//   width: 100%;
+// }
+//
+// #autocomplete .result {
+//   border-top: 1px solid @light-gray;
+//   padding: 1em;
+//   background: @white;
+//   font-size: 0.8em;
+//   text-align: left;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+//
+// #autocomplete .result .cardName {
+//   font-weight: bold;
+//   margin-right: 10px;
+// }
+//
+// #autocomplete .result .cardSet {
+//   color: @light-gray;
+//   font-size: 0.5em;
+// }

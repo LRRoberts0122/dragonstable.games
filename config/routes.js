@@ -36,16 +36,23 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'get /login': {
-    view: 'login'
-  },
-
-  'post /login': 'AuthController.login',
-  '/logout': 'AuthController.logout',
-
-  'get /signup': {
-    view: 'signup'
+  'get /card/:id': {
+    view: 'card'
   }
+  //
+  // 'get /login': {
+  //   view: 'login'
+  // },
+  //
+  // 'post /login': 'AuthController.login',
+  // '/logout': 'AuthController.logout',
+  //
+  // 'post /addcard': 'InventoryController.create',
+  // 'get /card/:id': 'InventoryController.getStock',
+  //
+  // 'get /signup': {
+  //   view: 'signup'
+  // }
 
   // Custom CRUD Rest routes
   // 'post /cards/magic/add': 'MagicCardsController.create',

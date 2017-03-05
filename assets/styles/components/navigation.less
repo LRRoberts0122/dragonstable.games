@@ -1,0 +1,119 @@
+.navigation {
+  background-color: @dark-gray;
+  padding: 1.5em 1.5em;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+}
+
+.navigation .column > * {
+  margin: 0em 1em;
+}
+
+.navigation nav a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: @font;
+  color: @white;
+  margin: 0.2em;
+  padding: 0.4em 0.8em;
+  background: @dark-gray;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.navigation nav a:hover {
+  color: @red;
+}
+
+.navigation nav a.active {
+  background: @red;
+}
+
+.navigation nav a.active:hover {
+  color: @white;
+}
+
+.navigation .login {
+  white-space: nowrap;
+}
+
+.navigation .login a {
+  text-decoration: none;
+  font-family: @font;
+  color: @white;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.navigation .login a:hover {
+  color: @red;
+}
+
+.navigation .login span {
+  font-size: 0.7em;
+  font-style: italic;
+  color: @white;
+  padding: 0.3em;
+}
+
+.navigation .column {
+  display: flex;
+  flex: 2 0 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+}
+
+.navigation .column:last-child {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 0 0;
+}
+
+.navigation .cart #basketIcon {
+  width: 1em;
+  background: @red;
+  padding: 0.7em;
+}
+
+.navigation .cart .text {
+  background: @white;
+  font-size: 0.7em;
+  padding: 0.9em 1.5em;
+  width: 8em;
+}
+
+.navigation .cart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@media only screen and (max-width: 885px) {
+  #faq {
+    display: none;
+  }
+
+  .navigation .cart .text {
+    width: 4em;
+  }
+
+  .totalPrice {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .navigation .column:last-child {
+    flex-direction: column;
+  }
+}

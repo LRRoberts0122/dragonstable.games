@@ -8,8 +8,20 @@
 module.exports = {
 
   attributes: {
-    card_id: String,
-    foil: Boolean,
-    quantity: Number
+    card_id: {
+      type: 'string',
+      required: true,
+      unique: true
+    },
+    foil_quantity: {
+      type: 'integer'
+    },
+    normal_quantity: {
+      type: 'integer'
+    },
+    toJSON: function() {
+      var obj = this.toObject();
+      return obj;
+    }
   }
 };
