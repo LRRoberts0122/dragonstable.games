@@ -24,6 +24,17 @@ function($rootScope, $scope, $routeParams, $log, DataService) {
     // Get Card Data
     DataService.findCardById($routeParams.card_id).then(function(response) {
       $scope.data = response[0];
+
+      var set = $scope.data.set.toLowerCase();
+      var name = $scope.data.name.toLowerCase();
+
+      name = name.replace(/'/g, '');
+      name = name.replace(/,/g, '');
+      name = name.replace(/ /g, "_");
+
+      var pathToImage = '/images/cards/' + set + '/' + name + '.full.jpg';
+
+      $scope.data.path = pathToImage;
       console.log($scope.data);
     });
   });

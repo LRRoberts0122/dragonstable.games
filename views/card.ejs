@@ -4,7 +4,17 @@
     {{data.id}}<br />
     {{data.set}}<br />
     {{data.text}}<br />
+    {{data.flare}}<br />
     {{data.rarity}}<br />
     {{data.multiverseid}}<br />
   </p>
+
+  <p>
+    {{data.path}}
+  </p>
+
+  <!-- <p>
+    {{'/images/cards/' + data.set.toLowerCase() + '/' + data.name.replace(/'/g,'').replace(/ /g,'_').replace(/,/g,'').toLowerCase() + '.full.jpg'}}
+  </p> -->
+  <img src="{{data.path}}" />
 </div>
