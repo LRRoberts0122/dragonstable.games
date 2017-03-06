@@ -38,14 +38,14 @@ module.exports.routes = {
 
   'get /card/:id': {
     view: 'card'
-  }
-  //
-  // 'get /login': {
-  //   view: 'login'
-  // },
-  //
-  // 'post /login': 'AuthController.login',
-  // '/logout': 'AuthController.logout',
+  },
+
+  'get /login': {
+    view: 'login'
+  },
+
+  'post /login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
   //
   // 'post /addcard': 'InventoryController.create',
   // 'get /card/:id': 'InventoryController.getStock',

@@ -1,30 +1,23 @@
-<section class="navigation">
-  <!-- LEFT -->
-  <!-- Logo -->
-  <div class="column">
-    <a href="/" target="_self" id="logo"><img src="/images/logo.svg" alt="The Dragon's Table" /></a>
-    <nav>
-      <a id="about" href="#">About</a>
-      <a id="faq" href="#">FAQ</a>
-      <a id="buylist" href="#">Buy List</a>
-      <a id="shop" href="#">Shop</a>
-    </nav>
-  </div>
+      <section class="navigation" ng-contoller="HeaderCtrl as header">
+        <div class="column">
+          <a href="/" target="_self" id="logo"><img src="/images/logo.svg" alt="The Dragon's Table" /></a>
+          <nav>
+            <a id="about" href="#">About</a>
+            <a id="faq" href="#">FAQ</a>
+            <a id="buylist" href="#">Buy List</a>
+            <a id="shop" href="#">Shop</a>
+            <a id="cart" href="#">{{link}}</a>
+          </nav>
+        </div>
 
-  <!-- Menu:  ABOUT  FAQ  BUY LIST  SHOP -->
+        <div class="column">
+          <div class="cart">
+            <p class="text">0 Items <span class="totalPrice">- $0.00</span></p>
+            <img id="basketIcon" src="/images/icons/basket.svg" alt="Shopping Cart" />
+          </div>
 
-  <div class="column">
-    <div class="cart">
-      <p class="text">0 Items <span class="totalPrice">- $0.00</span></p>
-      <img id="basketIcon" src="/images/icons/basket.svg" alt="Shopping Cart" />
-    </div>
-
-    <div class="login">
-      <a href="#">Login</a> <span>or</span> <a href="#">Register</a>
-    </div>
-  </div>
-
-  <!-- RIGHT -->
-    <!-- Cart Widget -->
-    <!-- LOGIN or REGISTER -->
-</section>
+          <div class="login">
+            <a href="/login" target="_self">Login</a> <span>or</span> <a href="#">Register</a>
+          </div>
+        </div>
+      </section>
