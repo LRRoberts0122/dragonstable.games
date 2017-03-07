@@ -32,19 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-
-  'get /card/:id': {
-    view: 'card'
-  },
-
-  'get /login': {
-    view: 'login'
-  },
-
-  'post /login': 'AuthController.login',
+  '/': { view: 'homepage' },
+  'GET /card/:id': { view: 'card' },
+  'GET /login': { view: 'login' },
+  'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
   //
   // 'post /addcard': 'InventoryController.create',

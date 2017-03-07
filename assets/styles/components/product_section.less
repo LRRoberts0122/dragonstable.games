@@ -1,0 +1,39 @@
+.products {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 10%;
+  margin-top: 3em;
+}
+
+.product {
+
+  & img {
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.2s ease;
+  }
+
+  & a {
+    opacity: 0.6;
+    transition: all 0.2s ease;
+  }
+}
+
+.product:hover {
+  cursor: pointer;
+
+  & a {
+    color: @red;
+    opacity: 1;
+  }
+
+  & img {
+    opacity: 1;
+    filter: none !important;
+  }
+}

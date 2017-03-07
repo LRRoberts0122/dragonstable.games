@@ -2,24 +2,23 @@ var dragonsApp = angular.module('dragonsApp', ['ngRoute']);
 
 dragonsApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
-    $routeProvider.when('/', {
-      controller: 'SearchCtrl',
-      templateUrl: 'templates/navigation.html'
-    })
+    $routeProvider
     .when('/card/:card_id', {
       controller: 'CardCtrl'
-    })
-    .when('/login', {
-      controller: 'LoginCtrl'
-    })
-    .otherwise({
-      redirectTo: '/',
-      caseInsensitiveMatch: true
     });
 
     $locationProvider.html5Mode(true);
   }
 ]);
+
+dragonsApp.controller('NavCtrl', ['$rootScope', '$scope', '$location', '$window',
+function($rootScope, $scope, $location, $window) {
+  $scope.navigate = function(page) {
+    console.log(page);
+    var url = "http://" + $window.location.host + "/shop/" + page;
+    $window.location.href = url;
+  };
+}])
 
 dragonsApp.controller('HeaderCtrl', ['$rootScope', '$scope', '$log', function($rootScope, $scope, $log) {
   console.log("CONTROLLER");

@@ -1,14 +1,43 @@
-<div ng-controller="SearchCtrl as search">
-  <section id="cta" class="content">
-    <h1 class="light">Find the trading cards you're looking for.</h1>
-    <div id="searchBox">
-      <input type="text" placeholder="Search for Standard MTG Cards" ng-model="searchData" ng-change="showResults()" />
-      <div id="autocomplete" ng-show="data.cards.length > 0" class="ng-hide">
-        <div class="result" ng-model="data.cards" ng-repeat="card in data.cards | orderBy: 'name' | limitTo: 5" ng-click="navigate(card.id)">
-          <span class="cardName"><b>{{card.name.substring(0, searchData.length)}}</b>{{card.name.substring(searchData.length)}}</span> <span class="cardType">({{card.type}})</span>
-          <span class="cardSet">{{card.set}}</span>
-        </div>
+<section id="cta" class="content" ng-controller="SearchCtrl as search">
+  <h1 class="light">Search for Magic: The Gathering standard singles.</h1>
+  <div id="searchBox">
+    <input type="text" placeholder="Search for Standard MTG Cards" ng-model="searchData" ng-change="showResults()" />
+    <div id="autocomplete" ng-show="data.cards.length > 0" class="ng-hide">
+      <div class="result" ng-model="data.cards" ng-repeat="card in data.cards | orderBy: 'name' | limitTo: 5" ng-click="navigate(card.id)">
+        <span class="cardName"><b>{{card.name.substring(0, searchData.length)}}</b>{{card.name.substring(searchData.length)}}</span> <span class="cardType">({{card.type}})</span>
+        <span class="cardSet">{{card.set}}</span>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+<section class="content center" ng-controller="NavCtrl">
+  <h1>What products are you looking for?</h1>
+
+  <div class="products">
+    <div class="product" ng-click="navigate('singles')">
+      <img src="/images/icons/singles.svg" />
+      <a href="#">Standard Singles</a>
+    </div>
+
+    <div class="product" ng-click="navigate('sealed')">
+      <img src="/images/icons/sealed.svg" />
+      <a href="#">Packs &amp; Boxes</a>
+    </div>
+
+    <div class="product" ng-click="navigate('accessories')">
+      <img src="/images/icons/accessories.svg" />
+      <a href="#">MTG Accessories</a>
+    </div>
+  </div>
+</section>
+
+<section id="buyCards" class="content center dark">
+  <h1 class="light">Sell us your cards.</h1>
+  <p>We're looking to buy your cards! Mail them in for more profit.</p>
+  <div>
+    <a href="#" class="primary button">Check Our Buy List</a>
+  </div>
+</section>
+
+<%- partial('partials/mailing_list.ejs') %>
