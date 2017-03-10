@@ -1,4 +1,17 @@
 <section id="cta" class="content" ng-controller="SearchCtrl as search">
+  <!-- <h1 class="light">Search for Magic: The Gathering standard singles.</h1>
+  <div id="searchBox">
+    <input type="text" placeholder="Search for Standard MTG Cards" ng-model="searchData" ng-change="showResults()" />
+    <div id="autocomplete" ng-show="data.cards.length > 0" class="ng-hide">
+      <div class="result" ng-model="data.cards" ng-repeat="card in data.cards | orderBy: 'name' | limitTo: 5" ng-click="navigate(card.id)">
+        <span class="cardName"><b>{{card.name.substring(0, searchData.length)}}</b>{{card.name.substring(searchData.length)}}</span> <span class="cardType">({{card.type}})</span>
+        <span class="cardSet">{{card.set}}</span>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+<!-- <section id="cta" class="content" ng-controller="SearchCtrl as search">
   <h1 class="light">Search for Magic: The Gathering standard singles.</h1>
   <div id="searchBox">
     <input type="text" placeholder="Search for Standard MTG Cards" ng-model="searchData" ng-change="showResults()" />
@@ -40,4 +53,4 @@
   </div>
 </section>
 
-<%- partial('partials/mailing_list.ejs') %>
+<%- partial('partials/mailing_list.ejs') %> -->

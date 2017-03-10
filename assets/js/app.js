@@ -1,4 +1,4 @@
-var dragonsApp = angular.module('dragonsApp', ['ngRoute']);
+var dragonsApp = angular.module('dragonsApp', ['ngRoute', 'ngSanitize']);
 
 dragonsApp.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
@@ -11,15 +11,14 @@ dragonsApp.config(['$routeProvider', '$locationProvider',
   }
 ]);
 
-dragonsApp.controller('NavCtrl', ['$rootScope', '$scope', '$location', '$window',
-function($rootScope, $scope, $location, $window) {
-  $scope.navigate = function(page) {
-    console.log(page);
-    var url = "http://" + $window.location.host + "/shop/" + page;
-    $window.location.href = url;
+dragonsApp.run(function($rootScope, NavigationService) {
+  $rootScope.navigate = function(card_id) {
+    NavigationService.route(card_id);
   };
-}])
+});
 
+
+// TO BE CART CONTROLLER:
 dragonsApp.controller('HeaderCtrl', ['$rootScope', '$scope', '$log', function($rootScope, $scope, $log) {
   console.log("CONTROLLER");
   $scope.link = "Cart";
@@ -28,54 +27,4 @@ dragonsApp.controller('HeaderCtrl', ['$rootScope', '$scope', '$log', function($r
 dragonsApp.controller('LoginCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
   $scope.title = "Login Page";
   console.log("CONTROLLER");
-}]);
-
-dragonsApp.controller('CardCtrl', ['$rootScope', '$scope', '$routeParams', '$log', 'DataService',
-function($rootScope, $scope, $routeParams, $log, DataService) {
-  $scope.data = {};
-  $scope.$on('$routeChangeSuccess', function () {
-    // Get Card Data
-    DataService.findCardById($routeParams.card_id).then(function(response) {
-      $scope.data = response[0];
-
-      var set = $scope.data.set.toLowerCase();
-      var name = $scope.data.name.toLowerCase();
-
-      name = name.replace(/'/g, '');
-      name = name.replace(/,/g, '');
-      name = name.replace(/ /g, "_");
-
-      var pathToImage = '/images/cards/' + set + '/' + name + '.full.jpg';
-
-      $scope.data.path = pathToImage;
-      console.log($scope.data);
-    });
-  });
-}]);
-
-dragonsApp.controller('SearchCtrl', ['$rootScope', '$scope', '$window', '$location', '$log', 'DataService',
-function($rootScope, $scope, $window, $location, $log, DataService) {
-  $scope.data = {};
-
-  $scope.showResults = function() {
-    if($scope.searchData.length > 0) {
-      DataService.searchCardsByName($scope.searchData).then(function(response) {
-        $scope.data.cards = response;
-      });
-    } else {
-      $scope.data.cards = [];
-    }
-  };
-
-  $scope.navigate = function(card_id) {
-    var landingUrl = "http://" + $window.location.host + "/card/" + card_id;
-    $window.location.href = landingUrl;
-  };
-
-  $scope.formatName = function(cardName) {
-    var pattern = new RegExp($scope.searchData, 'i');
-    var str = cardName.replace(pattern, '');
-    $log.info(str);
-    return str;
-  };
 }]);

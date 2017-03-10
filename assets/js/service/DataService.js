@@ -42175,6 +42175,17 @@ dragonsApp.service('DataService', function($q, $http) {
       defer.resolve(result);
 
       return defer.promise;
+    },
+    'findCardByName': function(card_name) {
+      var defer = $q.defer();
+
+      var result = cardData.filter(function(element) {
+        return element.name === card_name;
+      });
+
+      defer.resolve(result);
+
+      return defer.promise;
     }
   };
 });

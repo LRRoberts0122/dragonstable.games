@@ -1,20 +1,49 @@
-<div ng-controller="CardCtrl as card">
-  <p ng-model="data">
-    {{data.name}}<br />
-    {{data.id}}<br />
-    {{data.set}}<br />
-    {{data.text}}<br />
-    {{data.flare}}<br />
-    {{data.rarity}}<br />
-    {{data.multiverseid}}<br />
-  </p>
+<section class="content cards" ng-controller="CardCtrl">
 
-  <p>
-    {{data.path}}
-  </p>
+  <div class="card">
+    <div class="data">
+      <div class="preview">
+        <img src="{{data.path}}" />
+      </div>
 
-  <!-- <p>
-    {{'/images/cards/' + data.set.toLowerCase() + '/' + data.name.replace(/'/g,'').replace(/ /g,'_').replace(/,/g,'').toLowerCase() + '.full.jpg'}}
-  </p> -->
-  <img src="{{data.path}}" />
-</div>
+      <div>
+        <h1 class="name">{{data.name}}</h1>
+
+        <p class="meld">
+          <!-- Transformation Cards -->
+          <a href="#" ng-click="navigate(card.id)" ng-repeat="card in data.cards" ng-show="data.cards">{{card.name}}</a>
+        </p>
+
+        <p class="set">{{data.setName}} &mdash; {{data.rarity}}</p>
+
+        <p class="text" ng-bind-html="data.html">{{data.html}}</p>
+        <p class="flavor" ng-show="data.flavor">{{data.flavor}}</p>
+
+        <p class="inventory">
+          <b>1 foil</b> card in stock.<br />
+          <b>4 non-foil</b> cards in stock.
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="pricing">
+      <p class="price">$27.32</p>
+      <div class="quantity">
+        <p class="label">Quantity</p>
+        <div>
+          <a href="#"><img src="/images/icons/minus.svg" /></a>
+        </div>
+        <p>
+          2
+        </p>
+
+        <div>
+          <a href="#"><img src="/images/icons/plus.svg" /></a>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+<%- partial('partials/mailing_list.ejs') %>

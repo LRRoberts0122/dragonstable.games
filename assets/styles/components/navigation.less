@@ -1,12 +1,21 @@
 .navigation {
   background-color: @dark-gray;
-  padding: 1.5em 1.5em;
+  // padding: 1.5em 1.5em;
 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 
   align-items: center;
+  border-bottom: 1px solid #101010;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+.navigation .column {
+  padding: 0.5em 2em;
 }
 
 .navigation .column > * {
@@ -78,17 +87,19 @@
   flex: 1 0 0;
 }
 
-.navigation .cart #basketIcon {
+.navigation .cart #cartIcon {
   width: 1em;
-  background: @red;
   padding: 0.7em;
+  position: absolute;
+  right: 0.2em;
 }
 
 .navigation .cart .text {
   background: @white;
   font-size: 0.7em;
   padding: 0.9em 1.5em;
-  width: 8em;
+  width: 9.5em;
+  transition: all 0.2s ease;
 }
 
 .navigation .cart {
@@ -96,6 +107,12 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  & :hover {
+    color: @red;
+  }
 }
 
 #logo {

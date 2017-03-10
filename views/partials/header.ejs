@@ -1,0 +1,64 @@
+<header id="header" ng-controller="NavCtrl">
+  <div class="container">
+    <section class="grid-middle">
+      <!-- LOGO -->
+      <div class="col-2_md-3_sm-5_xs-5">
+        <a href="/" target="_self" id="logo">
+          <img src="/images/logo.svg" alt="The Dragon's Table" />
+        </a>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="col-6_md-4_sm-0_xs-0">
+        <a href="/about" target="_self">About</a>
+        <a href="/faq" target="_self">FAQ</a>
+        <a href="/buy" target="_self" class="active">Buy List</a>
+        <a href="/shop" target="_self">Shop</a>
+      </nav>
+
+      <!-- USER LINKS -->
+      <div id="user" class="col-4_md-5_sm-0_xs-0">
+        <a href="#" class="login">Login</a> <a href="#" class="signup">Sign Up</a>
+        <a class="cartLink" href="#">Cart ( <span class="cartItems">3</span> )
+          <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        	 x="0px" y="0px" viewBox="0 0 12.9 10.4" xml:space="preserve">
+            <g>
+            	<rect x="4.7" fill="#393845" width="8.2" height="2"/>
+            	<rect y="4" fill="#393845" width="12.9" height="2"/>
+            	<rect x="2.7" y="7.9" fill="#393845" width="10.3" height="2"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <!-- MOBILE MENU ICON -->
+      <div class="col-0_lg-0_md-0_sm-7_xs-7">
+        <div id="nav-icon" class="{{menuState}}" ng-click="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="{{menuState}} col-0_lg-0_md-0_sm-12_xs-12">
+        <nav>
+          <a href="/about" target="_self">About</a>
+          <a href="/faq" target="_self">FAQ</a>
+          <a href="/buy" target="_self">Buy List</a>
+          <a href="/shop" target="_self">Shop</a>
+          <a class="cartLink" href="#">Cart ( <span class="cartItems">3</span> )
+          </a>
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup">Sign Up</a>
+        </nav>
+      </div>
+    </section>
+  </div>
+</header>
+
+<!-- CART WIDGET -->
+<section id="cart">
+
+</section>
