@@ -1,0 +1,62 @@
+#notFound {
+  height: 100vh;
+  background: @gray-light;
+  overflow: hidden;
+
+  & .container {
+    padding-top: 12em;
+    position: relative;
+
+    & .chandra {
+      position: absolute;
+      bottom: -5em;
+      right: 2em;
+      z-index: 0;
+    }
+  }
+
+  & .error {
+    text-align: left;
+    color: @slate;
+
+    & .text {
+      max-width: 30em;
+      margin: 0 auto;
+    }
+
+    & .wrapper {
+      float: right;
+    }
+
+    & h1 {
+      margin: 0;
+      margin-bottom: 2em;
+    }
+
+    & h1.number {
+      .font(300, @lato, 600);
+      color: @red;
+      margin: 0;
+      background: @gray-light;
+    }
+
+    & p.flareText {
+      margin: 0;
+      .font(22, @openSans, 400);
+    }
+  }
+}
+
+@media screen and (max-width: 64em) {
+  #notFound .container .chandra {
+    right: auto;
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  #notFound .container .chandra {
+    right: auto;
+    left: 45%;
+  }
+}
